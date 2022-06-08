@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>Home</h2>
+
+<h5>This is the homepage with a short description of the system that I have coded</h5>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-8">
+            <h2>Description</h2>
+            <p>In this assignment I am coding a system that mostly handles media. You can add hotos onto it from your computer files, this includes images, videos, or documents.
+            You can then view the media by clicking on the Navbar accordingly,You can then delete the media piece or download it to your computer files.
+            The video can be double clicked on and it would play perfectly. There is also an About me page linked in the Navbar which gives a short description of 
+            the person who coded this assignment and a nice charming picture of him (me lol).</p>
+        </div>
+        @using (Html.BeginForm("Home", "Media", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="col-lg-4">
+                <h2>Option Selection</h2>
+                <div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" value="Document">Document</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" value="Image">Image</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" name="optradio" value="Video">Video</label>
+                    </div>
+                </div>
+                <input type="file" class="form-control" name="file" />
+                <br />
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+        }
+    </div>
+</div>
